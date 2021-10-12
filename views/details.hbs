@@ -1,0 +1,840 @@
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="./css/main/main.css">
+<link rel="stylesheet" type="text/css" href="./css/main/joincampaign.css">
+<link rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script src='../index.js'></script>
+</head>
+<style>
+  body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #37517e ;
+
+}
+
+.topnav a   {
+  float: left;
+  color: white ;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 150 ;
+}
+
+.topnav a:hover {
+  transform: scale(1.2);
+}
+.topnav a.active:hover {
+    
+  transform: scale(1.1);
+}
+.topnav a.active {
+    
+  color:  #47b2e4 ;
+}
+.container {
+	float: left;
+  color: white ;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 10px ;
+  margin-top: 12px ;
+  margin-bottom: 6px ;
+  padding-right: 10px;
+  
+}
+
+.rechange , .bar1, .bar2, .bar3 {
+  width: 25px;
+  height: 2px;
+  background-color: #333;
+  margin: 4px 0;
+  transition: 0.4s;
+  background-color: white ;
+
+
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-4px, 4px);
+  transform: rotate(-45deg) translate(-4px, 4px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-4px, -5px);
+  transform: rotate(45deg) translate(-4px, -5px);
+}
+
+.tabcontent{
+  margin-left: 0px ;
+  display: none ;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 10px;
+  margin-top: 48px;
+
+}
+
+.sidenav a {
+
+  text-decoration: none;
+  font-size: 17px;
+  color: white ;
+  display: block;
+  transition: 0.3s;
+  font-weight: 700  ;
+  text-align: center;
+  padding: 14px 16px;
+  left: -190px;
+}
+
+.sidenav a:hover {
+  background: rgb(143,190,219);
+background: linear-gradient(90deg, rgba(143,190,219,1) 0%, rgba(195,242,207,1) 100%);
+  color: black ;
+  left: 0;
+
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 0px ;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+.close1 {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+:root {
+  --borderWidth: 4px;
+  --height: 12px;
+  --width: 6px;
+  --borderColor: #78b13f;
+}
+.done {
+  display: inline-block;
+  transform: rotate(45deg);
+  height: var(--height);
+  width: var(--width);
+  border-bottom: var(--borderWidth) solid var(--borderColor);
+  border-right: var(--borderWidth) solid var(--borderColor);
+  
+}
+.not_done{
+  height: 12px;
+  width: 12px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.not_done:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "\274c"; /* use the hex value here... */
+  font-size: 12px; 
+  color: #FFF;
+  line-height: 12px;
+  text-align: center;
+  
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+@media only screen and (max-width: 1000px) {
+
+  .d-none{
+    display: none;
+  }
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #37517e ;
+    height: 48px;
+  }
+}
+body {
+	background: #f6f5f7;
+	font-family: 'Montserrat', sans-serif;
+	
+}
+
+h1 {
+	font-weight: bold;
+	margin: 0;
+}
+
+h2 {
+	text-align: center;
+}
+
+p {
+	font-size: 14px;
+	font-weight: 100;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	margin: 20px 0 30px;
+}
+
+span {
+	font-size: 12px;
+}
+
+a {
+	color: #333 ;
+	font-size: 14px;
+	text-decoration: none;
+	
+}
+
+button {
+	border-radius: 20px;
+	border: 1px solid #37517e;
+	background-color: #37517e;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+button:active {
+	transform: scale(0.95);
+}
+
+button:focus {
+	outline: none;
+}
+
+button.ghost {
+	background-color: transparent;
+	border-color: #FFFFFF;
+	border-width: 1.5px;
+}
+
+form {
+	background-color: #FFFFFF;
+	padding: 0 50px;
+	height: 100%;
+	
+}
+
+input {
+	background-color: #eee;
+	border-color: gray ;
+	border-width: 1px ;
+	border-radius: 5px;
+	padding: 12px 15px;
+	margin: 5px;
+	width: 70%;
+}
+select {
+	background-color: #eee;
+	border-color: gray ;
+	border-width: 1px ;
+	border-radius: 5px;
+	padding: 12px 15px;
+	margin: 5px ;
+	width: 70%;
+}
+table{
+	width: 100%;
+}
+th{
+
+	border: 1px solid #37517e;
+	background-color: #37517e;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+td{
+	font-size: 14px;
+	font-weight: 100;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	margin: 20px ; 
+	padding: 10px ;
+}
+#create{
+	flex-direction: column ;
+	display : none ;
+	align-items: left;
+	justify-content: left;
+	border-radius: 10px;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	margin: 20px;
+	color: #5E5E5E;
+	padding: 10px;
+	font-size: 20px;
+	font-weight: 700;
+
+}
+
+#profile{
+	flex-direction: column ;
+	display : none ;
+	align-items: left;
+	justify-content: left;
+	border-radius: 10px;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	margin: 20px;
+	color: #5E5E5E;
+	padding: 10px;
+	font-size: 20px;
+	font-weight: 700;
+
+}
+
+#edit{
+	flex-direction: column ;
+	display : none ;
+	align-items: left;
+	justify-content: left;
+	border-radius: 10px;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	margin: 20px;
+	color: #5E5E5E;
+	padding: 10px;
+	font-size: 20px;
+	font-weight: 700;
+
+}
+#join{
+	display: none;
+	width: 100%;
+	flex-direction: column;
+}
+#MyCampaigns{
+	display: none;
+	width: 100%;
+	flex-direction: column;
+}
+#join1{
+	flex-direction: column ;
+	display : flex ;
+	align-items: left;
+	justify-content: left;
+	border-radius: 10px;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	margin: 20px;
+	color: #5E5E5E;
+	padding: 10px;
+	font-size: 20px;
+	font-weight: 700;
+
+}
+#subjoin{
+	display: flex;
+	flex-direction: row;
+	align-items: center ;
+	justify-content: left;
+	padding: 5px;
+}
+.place1{
+	width: 250px;
+	padding: 10px;
+}
+.place2{
+	flex-grow: 3;
+	padding: 10px;
+	color: #47b2e4;
+}
+.inp{
+	
+}
+#googleMap{
+	background-color: #eee;
+	border-color: gray ;
+	border-width: 1px ;
+	border-radius: 5px;
+	text-align: center;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 70%;
+	height: 500px;
+}
+#googleMap1{
+	background-color: #eee;
+	border-color: gray ;
+	border-width: 1px ;
+	border-radius: 5px;
+	text-align: center;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 70%;
+	height: 500px;
+}
+
+.search{
+	margin: 10px;
+	transform: scale(1.3);
+	color: #47b2e4;
+}
+.campaign{
+	display: flex;
+	flex-direction: row ;
+	align-items: center ;
+	justify-content: center;
+	font-size: 18px;
+}
+.subcamp{
+	display: flex;
+	flex-direction: column ;
+	align-items: left ;
+	justify-content: left;
+	margin: 10px;
+}
+.subsubcamp{
+	display: flex ;
+	flex-direction: row ;
+	align-items: left ;
+	justify-content: left;
+	margin: 10px;
+}
+.ite{
+	margin: 10px;
+	width: 200px;
+}
+.ite11{
+	margin: 10px;
+	align-self: right;
+	width: 50%;
+}
+.table1{
+
+
+}
+@media only screen and (max-width: 1000px) {
+
+	.d-none{
+	  display: none;
+	}
+	body {
+	  margin: 0;
+	  font-family: Arial, Helvetica, sans-serif;
+	}
+	
+	body {
+	  background: #f6f5f7;
+	  font-family: 'Montserrat', sans-serif;
+	  
+	}
+	
+	h1 {
+	  font-weight: bold;
+	  margin: 0;
+	}
+	
+	h2 {
+	  text-align: center;
+	}
+	
+	p {
+	  font-size: 14px;
+	  font-weight: 100;
+	  line-height: 20px;
+	  letter-spacing: 0.5px;
+	  margin: 20px 0 30px;
+	}
+	
+	span {
+	  font-size: 12px;
+	}
+	
+	a {
+	  color: #333 ;
+	  font-size: 14px;
+	  text-decoration: none;
+	  
+	}
+	
+	button {
+	  border-radius: 20px;
+	  border: 1px solid #37517e;
+	  background-color: #37517e;
+	  color: #FFFFFF;
+	  font-size: 12px;
+	  font-weight: bold;
+	  padding: 12px 45px;
+	  letter-spacing: 1px;
+	  text-transform: uppercase;
+	  transition: transform 80ms ease-in;
+	}
+	
+	button:active {
+	  transform: scale(0.95);
+	}
+	
+	button:focus {
+	  outline: none;
+	}
+	
+	button.ghost {
+	  background-color: transparent;
+	  border-color: #FFFFFF;
+	  border-width: 1.5px;
+	}
+	
+	form {
+	  background-color: #FFFFFF;
+	  padding: 0 50px;
+	  height: 100%;
+	  
+	}
+	
+	input {
+	  background-color: #eee;
+	  border-color: gray ;
+	  border-width: 1px ;
+	  border-radius: 5px;
+	  padding: 12px 15px;
+	  margin: 5px;
+	  width: 70%;
+	}
+	select {
+	  background-color: #eee;
+	  border-color: gray ;
+	  border-width: 1px ;
+	  border-radius: 5px;
+	  padding: 12px 15px;
+	  margin: 5px ;
+	  width: 70%;
+	}
+	table{
+	  width: 100%;
+	}
+	th{
+	
+	  border: 1px solid #37517e;
+	  background-color: #37517e;
+	  color: #FFFFFF;
+	  font-size: 12px;
+	  font-weight: bold;
+	  padding: 12px 0px;
+	  letter-spacing: 1px;
+	  text-transform: uppercase;
+	  transition: transform 80ms ease-in;
+	}
+	td{
+	  font-size: 14px;
+	  font-weight: 100;
+	  line-height: 20px;
+	  letter-spacing: 0.5px;
+	  margin: 0px ; 
+	  padding: 1px ;
+	}
+	#create{
+	  flex-direction: column ;
+	  display : none ;
+	  align-items: left;
+	  justify-content: left;
+	  border-radius: 10px;
+	  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+		  0 10px 10px rgba(0,0,0,0.22);
+	  margin: 5px;
+	  color: #5E5E5E;
+	  padding: 3px;
+	  font-size: 20px;
+	  font-weight: 700;
+	
+	}
+	#profile{
+		flex-direction: column ;
+		display : none ;
+		align-items: left;
+		justify-content: left;
+		border-radius: 10px;
+		box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+		margin: 5px;
+		color: #5E5E5E;
+		padding: 3px;
+		font-size: 20px;
+		font-weight: 700;
+	  
+	  }
+	#edit{
+	  flex-direction: column ;
+	  display : none ;
+	  align-items: left;
+	  justify-content: left;
+	  border-radius: 10px;
+	  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+		  0 10px 10px rgba(0,0,0,0.22);
+	  margin: 20px;
+	  color: #5E5E5E;
+	  padding: 10px;
+	  font-size: 20px;
+	  font-weight: 700;
+	
+	}
+	#join{
+	  display: none;
+	  width: 100%;
+	  flex-direction: column;
+	}
+	#MyCampaigns{
+	  display: none;
+	  width: 100%;
+	  flex-direction: column;
+	}
+	#join1{
+	  flex-direction: column ;
+	  display : flex ;
+	  align-items: left;
+	  justify-content: left;
+	  border-radius: 10px;
+	  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+		  0 10px 10px rgba(0,0,0,0.22);
+	  margin: 5px;
+	  color: #5E5E5E;
+	  padding: 3px;
+	  font-size: 20px;
+	  font-weight: 700;
+	
+	}
+	#subjoin{
+	  display: flex;
+	  flex-direction: column ;
+	  align-items: flex-start ;
+	  justify-content: left;
+	  padding: 5px;
+	}
+	.place1{
+	  flex-grow: 3;
+	}
+	.inp{
+	  
+	}
+	#googleMap{
+	  background-color: #eee;
+	  border-color: gray ;
+	  border-width: 1px ;
+	  border-radius: 5px;
+	  text-align: center;
+	  padding: 12px 15px;
+	  margin: 8px 0;
+	  width: 90%;
+	  height: 300px;
+	}
+	#googleMap1{
+	  background-color: #eee;
+	  border-color: gray ;
+	  border-width: 1px ;
+	  border-radius: 5px;
+	  text-align: center;
+	  padding: 12px 15px;
+	  margin: 8px 0;
+	  width: 70%;
+	  height: 500px;
+	}
+	img{
+		display: none;
+	}
+	.search{
+	  margin: 10px;
+	  transform: scale(1.3);
+	  color: #47b2e4;
+	}
+	.campaign{
+	  display: flex;
+	  flex-direction: column ;
+	  align-items: center ;
+	  justify-content: center;
+	  font-size: 18px;
+	}
+	.subcamp{
+	  display: flex;
+	  flex-direction: column ;
+	  align-items: left ;
+	  justify-content: left;
+	  margin: 10px;
+	}
+	.subsubcamp{
+	  display: flex ;
+	  flex-direction: row ;
+	  align-items: left ;
+	  justify-content: left;
+	  margin: 0px;
+	}
+	.ite{
+	  margin: 10px;
+	  width: 200px;
+	}
+	.ite11{
+	  margin: 10px;
+	  align-self: right;
+	  width: 50%;
+	}
+	form{
+		padding: 0px;
+		padding-left: 5px;
+	}
+	.search1{
+		padding: 0px;
+	}
+  }
+</style>
+<body>
+
+
+<div id="mySidenav" class="sidenav">
+  
+  <a class="tablinks" href="/add" >Add customer</a>
+  <a class="tablinks" href="/list" >List </a>
+  <a class="tablinks" href="#profile" >
+  <i class='fas fa-user-alt' style='font-size:18px;color:white'></i>
+  
+  </a>
+</div>
+
+<div class="topnav">
+	<div class="container" onclick="myFunction(this)" id="bar12">
+  			<div class="bar1"></div>
+  			<div class="bar2"></div>
+ 	 		<div class="bar3"></div>
+	</div>
+   <a class="tablinks" href="/add" >Add customer</a>
+  <a class="tablinks" href="/list" >List </a>
+  <a class="tablinks d-none" href="#profile" 
+  style="float: right;" ><i class='fas fa-user-alt' style='font-size:18px;color:white'></i>
+  {{{fname}}}{{{lname}}}{{{useremail.fname}}}{{{useremail.lname}}}</a>
+</div>
+
+<div id="create" class="tabcontent" >
+      <div id="subjoin">
+        <label class="place1">user_id</label>
+        <label class="place2">{{finduser.user_id}}</label>
+      </div>
+      <div id="subjoin">
+        <label class="place1">user_name</label>
+        <label class="place2">{{finduser.user_name}}</label>
+      </div>
+      <div id="subjoin">
+        <label class="place1">user_email</label>
+        <label class="place2">{{finduser.user_email}}</label>
+      </div>
+      <div id="subjoin">
+        <label class="place1">user_image</label>
+        <img src="/uploads/{{finduser.user_image.filename}}" height="300px" >
+      </div>
+      <div id="subjoin">
+        <label class="place1">total_orders</label>
+        <label class="place2">{{finduser.total_orders}}</label>
+      </div>
+      <div id="subjoin">
+        <label class="place1">last_logged_in</label>
+        <label class="place2">{{finduser.last_logged_in}}</label>
+      </div>
+      <div id="subjoin">
+        <label class="place1">created_at</label>
+        <label class="place2">{{finduser.created_at}}</label>
+      </div>
+      
+      
+</div>
+
+
+
+
+</body>
+
+
+
+<script>
+
+var flag_sidenav = 0 ; 
+function myFunction(x) {
+  x.classList.toggle("change");
+  if(flag_sidenav == 0 )
+  {
+    openNav() ; 
+    
+  }
+  else
+  {
+    closeNav() ; 
+    
+  }
+  
+}
+function openNav() {
+  var tabcontent = document.getElementsByClassName("tabcontent");
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("create").style.marginLeft = "250px";
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.marginLeft = "250px";
+  }
+  flag_sidenav = 1 ;
+}
+
+function closeNav() {
+  var tabcontent = document.getElementsByClassName("tabcontent");
+  document.getElementById("mySidenav").style.width = "0px";
+  document.getElementById("create").style.marginLeft = "0px";
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.marginLeft = "0px";
+  }
+  flag_sidenav = 0 ;
+}
+
+
+
+</script>
+<script type="text/javascript">
+  document.getElementById("create").style.display = "flex" ;
+</script>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="./css/main/main.css">
+<link rel="stylesheet" type="text/css" href="./css/main/joincampaign.css">
+<link rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script src='../index.js'></script>
+</head>
+
+<body>
+
+
+<div id="mySidenav" class="sidenav">
+  
+  <a class="tablinks" href="/add" >Add customer</a>
+  <a class="tablinks" href="/list" >List </a>
+  <a class="tablinks" href="#profile" >
+  <i class='fas fa-user-alt' style='font-size:18px;color:white'></i>
+  
+  </a>
+</div>
+
+<div class="topnav">
+	<div class="container" onclick="myFunction(this)" id="bar12">
+  			<div class="bar1"></div>
+  			<div class="bar2"></div>
+ 	 		<div class="bar3"></div>
+	</div>
+   <a class="tablinks" href="/add" >Add customer</a>
+  <a class="tablinks" href="/list" >List </a>
+  <a class="tablinks d-none" href="#profile" 
+  style="float: right;" ><i class='fas fa-user-alt' style='font-size:18px;color:white'></i>
+  {{{fname}}}{{{lname}}}{{{useremail.fname}}}{{{useremail.lname}}}</a>
+</div>
+
+
+
+
+<div id="show" class="tabcontent">
+    
+    <div id="join1" style="width:100%;">
+      <table class="table1">
+        <tr>
+          <th class="d-none">UserID</th>
+          <th class="d-none">Email</th>
+          <th>Username</th>
+        </tr>
+        
+        {{#each alluser}}
+        <tr>
+          
+          <td  class="d-none">{{this.user_id}}</td>
+          <td  class="d-none">{{this.user_email}}</td>
+          <td>{{this.user_name}}</td>
+          
+          <input name="email" value="{{this.email}}" style="display: none;" >
+          <input name="username" value="xxx" style="display: none;" >
+          <input name="campname" value="{{this.campname}}" style="display: none;" >
+          <td style="margin: 0px;  width:51px">
+            <form action="/update/{{this.user_id}}" method="GET" style="padding: 5px;width:50px;">
+              <button type="submit" style="padding: 10px; margin:0px;">
+              <i class="fa fa-edit" style="font-size: 16px;"></i>
+              </button>
+            </form>
+          </td>
+          <td style="margin: 0px;  width:51px">
+            <form action="/details/{{this.user_id}}" method="GET" style="padding: 5px;width:50px;">
+              <button type="submit" style="padding: 10px; margin:0px;">
+              <i class="fa fa-address-book" style="font-size: 16px;"></i>
+              </button>
+            </form>
+          </td>
+          <td style="margin: 0px;  width:51px">
+            <form action="/delete/{{this.user_id}}" method="POST" style="padding: 5px;width:50px;">
+              <button type="submit" style="padding: 10px; margin:0px;">
+              <i class="fa fa-trash" style="font-size: 16px;"></i>
+              </button>
+            </form>
+          </td>
+         
+        </tr>
+        {{/each}}
+        
+      </table>
+    </div>
+</div>
+
+
+
+
+
+</body>
+
+
+
+<script>
+
+var flag_sidenav = 0 ; 
+function myFunction(x) {
+  x.classList.toggle("change");
+  if(flag_sidenav == 0 )
+  {
+    openNav() ; 
+    
+  }
+  else
+  {
+    closeNav() ; 
+    
+  }
+  
+}
+function openNav() {
+  var tabcontent = document.getElementsByClassName("tabcontent");
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("show").style.marginLeft = "250px";
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.marginLeft = "250px";
+  }
+  flag_sidenav = 1 ;
+}
+
+function closeNav() {
+  var tabcontent = document.getElementsByClassName("tabcontent");
+  document.getElementById("mySidenav").style.width = "0px";
+  document.getElementById("show").style.marginLeft = "0px";
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.marginLeft = "0px";
+  }
+  flag_sidenav = 0 ;
+}
+
+
+
+</script>
+<script type="text/javascript">
+  document.getElementById("show").style.display = "flex" ;
+</script>
+</html>

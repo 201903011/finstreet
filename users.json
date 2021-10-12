@@ -1,0 +1,89 @@
+[{
+  "_id": {
+    "$oid": "6165290cf719fa6875f38be9"
+  },
+  "user_id": "a7735271-bda8-433a-81f7-3c41a82f7926",
+  "user_name": "rahul1234",
+  "user_email": "czvvczv@a.aa",
+  "user_password": "1234",
+  "user_image": {
+    "fieldname": "user_image",
+    "originalname": "Profile.PNG",
+    "encoding": "7bit",
+    "mimetype": "image/png",
+    "destination": "./uploads/",
+    "filename": "7c7d08b34aa873f615a787f8ae5b07ba",
+    "path": "uploads\\7c7d08b34aa873f615a787f8ae5b07ba",
+    "size": 16375
+  },
+  "total_orders": 0,
+  "created_at": "1634019596798",
+  "last_logged_in": "ss",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6165293bf719fa6875f38bed"
+  },
+  "user_id": "d2c92d8d-761d-4df5-9da7-e8234b2b3278",
+  "user_name": "rahul69",
+  "user_email": "rahul@gmail.com",
+  "user_password": "1111",
+  "user_image": {
+    "fieldname": "user_image",
+    "originalname": "rahul.png",
+    "encoding": "7bit",
+    "mimetype": "image/png",
+    "destination": "./uploads/",
+    "filename": "048bb89b883f27f1cbc59f06e5fdcd93",
+    "path": "uploads\\048bb89b883f27f1cbc59f06e5fdcd93",
+    "size": 532978
+  },
+  "total_orders": 0,
+  "created_at": "1634019643731",
+  "last_logged_in": "ss",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6165295af719fa6875f38bf1"
+  },
+  "user_id": "e9a32925-0d66-4ba7-9716-3ec2c4b80acf",
+  "user_name": "atharva",
+  "user_email": "atharva@gmail.com",
+  "user_password": "atharva",
+  "user_image": {
+    "fieldname": "user_image",
+    "originalname": "atharva.jpeg",
+    "encoding": "7bit",
+    "mimetype": "image/jpeg",
+    "destination": "./uploads/",
+    "filename": "996880911ca7983064d6d9c43aa2acb9",
+    "path": "uploads\\996880911ca7983064d6d9c43aa2acb9",
+    "size": 19564
+  },
+  "total_orders": 0,
+  "created_at": "1634019674477",
+  "last_logged_in": "ss",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6165297bf719fa6875f38bf5"
+  },
+  "user_id": "3ddd7230-4f08-4ea3-8087-9b0ae90bdd0c",
+  "user_name": "riddhi1234",
+  "user_email": "riddhi@gmail.com",
+  "user_password": "1111",
+  "user_image": {
+    "fieldname": "user_image",
+    "originalname": "Profile.PNG",
+    "encoding": "7bit",
+    "mimetype": "image/png",
+    "destination": "./uploads/",
+    "filename": "229f3f0756eaa7e705e7009749fff70c",
+    "path": "uploads\\229f3f0756eaa7e705e7009749fff70c",
+    "size": 16375
+  },
+  "total_orders": 0,
+  "created_at": "1634019707058",
+  "last_logged_in": "ss",
+  "__v": 0
+}]
